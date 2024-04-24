@@ -1,3 +1,6 @@
+[![Continuous Integration](https://github.com/fonil/sequence/actions/workflows/ci.yml/badge.svg)](https://github.com/fonil/sequence/actions/workflows/ci.yml)
+
+
 # Sequence
 
 
