@@ -1,0 +1,12 @@
+.idea
+.phpunit.cache
+
+caddy-root-ca-authority.crt
+
+vendor/
+coverage/
+build/
+
+docker-compose.yml
+Dockerfile
+Makefile
