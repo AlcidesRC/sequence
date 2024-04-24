@@ -30,7 +30,7 @@ Create a `Sequence` instance and attach any type of payload through a simple int
 ```php
 $result = Sequence::run(FirstTask::class)
 	->then(SecondTask::class)
-    ...
+	...
 	->then(LastTask::class)
 	->startWith('payload');
 ```
@@ -163,10 +163,10 @@ $result = Sequence::run($sequence)
 ### Examples
 
 ```php
-$result = Sequence::run($closure)						// 1st run $closure 							=> $counter++
-	->then(InvokableIncrementCounter::class)			// 2nd run InvokableIncrementCounter::__invoke	=> $counter++
-	->then([IncrementCounter::class, 'increment'])		// 3rd run IncrementCounter::increment			=> $counter++
-	->then(IncrementTask::class)						// 4th run IncrementTask::handle()				=> $counter++
+$result = Sequence::run($closure)			// 1st execution => $counter is 1
+	->then(InvokableIncrementCounter::class)	// 2nd execution => $counter is 2
+	->then([IncrementCounter::class, 'increment'])	// 3rd execution => $counter is 3
+	->then(IncrementTask::class)			// 4th execution => $counter is 4
 	->startWith(['counter' => 0]);
 
 // echo json_encode($result);
