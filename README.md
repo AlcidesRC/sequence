@@ -63,7 +63,7 @@ class InvokableIncrementCounter
 $result = Sequence::run(InvokableIncrementCounter::class)
     ->startWith(['counter' => 0]);
 
-// echo json_encode($result);
+echo json_encode($result);
 // {"counter":1}
 ```
 
@@ -72,7 +72,7 @@ $result = Sequence::run(InvokableIncrementCounter::class)
 ```php
 class IncrementTask implements TaskInterface
 {
-	//...
+    //...
     
     public function handle(mixed $payload = null): mixed
     {
@@ -84,7 +84,7 @@ class IncrementTask implements TaskInterface
 $result = Sequence::run(IncrementTask::class)
     ->startWith(['counter' => 0]);
 
-// echo json_encode($result);
+echo json_encode($result);
 // {"counter":1}
 ```
 
@@ -108,7 +108,7 @@ $result = Sequence::run([IncrementCounter::class, 'add'])
 $result = Sequence::run([new IncrementCounter(), 'add'])
     ->startWith(['counter' => 0]);
 
-// echo json_encode($result);
+echo json_encode($result);
 // {"counter":1}
 ```
 
@@ -127,7 +127,7 @@ class IncrementCounter
 $result = Sequence::run([IncrementCounter::class, 'add'])
     ->startWith(['counter' => 0]);
 
-// echo json_encode($result);
+echo json_encode($result);
 // {"counter":1}
 ```
 
@@ -142,7 +142,7 @@ $closure = function (array $payload): array {
 $result = Sequence::run($closure)
     ->startWith(['counter' => 0]);
 
-// echo json_encode($result);
+echo json_encode($result);
 // {"counter":1}
 ```
 
@@ -159,7 +159,7 @@ $sequence = Sequence::run($closure)->then($closure);
 $result = Sequence::run($sequence)
     ->startWith(['counter' => 0]);
 
-// echo json_encode($result);
+echo json_encode($result);
 // {"counter":2}
 ```
 
@@ -172,7 +172,7 @@ $result = Sequence::run($closure)			// 1st execution => $counter is 1
 	->then(IncrementTask::class)			// 4th execution => $counter is 4
 	->startWith(['counter' => 0]);
 
-// echo json_encode($result);
+echo json_encode($result);
 // {"counter":4}
 ```
 
