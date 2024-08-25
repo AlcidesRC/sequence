@@ -37,7 +37,7 @@ jobs:
           coverage: pcov
 
       - name: Validate composer.json and composer.lock
-        run: composer validate --working-dir=./src --strict
+        run: composer validate --working-dir=. --strict
 
       - name: Cache Composer packages
         id: composer-cache
@@ -49,7 +49,7 @@ jobs:
             ${{ runner.os }}-php-
 
       - name: Install PHP dependencies
-        run: composer install --working-dir=./src --${{ matrix.dependency_version }} --no-interaction --no-progress --ansi
+        run: composer install --working-dir=. --${{ matrix.dependency_version }} --no-interaction --no-progress --ansi
 
       - name: Check PHP Syntax
         run: composer check-syntax
