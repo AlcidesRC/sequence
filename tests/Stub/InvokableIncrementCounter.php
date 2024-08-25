@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Sequence\Tests\Stub;
+namespace Sequence\Tests\Stub;
 
 class InvokableIncrementCounter
 {

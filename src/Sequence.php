@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Sequence;
+namespace Sequence;
 
 use BadMethodCallException;
 use Closure;
-use Fonil\Sequence\Exceptions\SequenceException;
-use Fonil\Sequence\TaskInterface;
-use Fonil\Sequence\Utils\TaskResolver;
+use Sequence\Exceptions\SequenceException;
+use Sequence\TaskInterface;
+use Sequence\Utils\TaskResolver;
 
 /**
  * Class Sequence

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Sequence\Utils;
+namespace Sequence\Utils;
 
-use Fonil\Sequence\Exceptions\SequenceException;
-use Fonil\Sequence\TaskInterface;
+use Sequence\Exceptions\SequenceException;
+use Sequence\TaskInterface;
 use Throwable;
 
 final class TaskFromString

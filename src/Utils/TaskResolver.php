@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Sequence\Utils;
+namespace Sequence\Utils;
 
 use Closure;
-use Fonil\Sequence\Sequence;
-use Fonil\Sequence\Exceptions\SequenceException;
-use Fonil\Sequence\Task;
-use Fonil\Sequence\TaskInterface;
+use Sequence\Sequence;
+use Sequence\Exceptions\SequenceException;
+use Sequence\Task;
+use Sequence\TaskInterface;
 
 final class TaskResolver
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Sequence\Utils;
+namespace Sequence\Utils;
 
-use Fonil\Sequence\Task;
-use Fonil\Sequence\TaskInterface;
+use Sequence\Task;
+use Sequence\TaskInterface;
 
 final class TaskClosure extends Task implements TaskInterface
 {

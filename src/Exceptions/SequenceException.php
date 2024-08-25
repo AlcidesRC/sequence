@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Sequence\Exceptions;
+namespace Sequence\Exceptions;
 
 use Exception;
 use Throwable;

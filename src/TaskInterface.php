@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Sequence;
+namespace Sequence;
 
 use Closure;
-use Fonil\Sequence\Exceptions\SequenceException;
+use Sequence\Exceptions\SequenceException;
 
 interface TaskInterface
 {

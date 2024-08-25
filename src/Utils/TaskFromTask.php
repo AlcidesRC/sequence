@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Sequence\Utils;
+namespace Sequence\Utils;
 
-use Fonil\Sequence\TaskInterface;
+use Sequence\TaskInterface;
 
 final class TaskFromTask
 {

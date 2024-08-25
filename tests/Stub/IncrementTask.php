@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Sequence\Tests\Stub;
+namespace Sequence\Tests\Stub;
 
-use Fonil\Sequence\Task;
-use Fonil\Sequence\TaskInterface;
+use Sequence\Task;
+use Sequence\TaskInterface;
 
 class IncrementTask extends Task implements TaskInterface
 {

@@ -2,33 +2,33 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Sequence\Tests\Unit;
+namespace Sequence\Tests\Unit;
 
 use DateTime;
-use Fonil\Sequence\Exceptions\SequenceException;
-use Fonil\Sequence\Sequence;
-use Fonil\Sequence\TaskInterface;
-use Fonil\Sequence\Tests\Stub\Foo;
-use Fonil\Sequence\Tests\Stub\IncrementCounter;
-use Fonil\Sequence\Tests\Stub\IncrementTask;
-use Fonil\Sequence\Tests\Stub\InvokableIncrementCounter;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Sequence\Exceptions\SequenceException;
+use Sequence\Sequence;
+use Sequence\TaskInterface;
+use Sequence\Tests\Stub\Foo;
+use Sequence\Tests\Stub\IncrementCounter;
+use Sequence\Tests\Stub\IncrementTask;
+use Sequence\Tests\Stub\InvokableIncrementCounter;
 use SlopeIt\ClockMock\ClockMock;
 use TypeError;
 use stdClass;
 
-#[CoversClass(\Fonil\Sequence\Exceptions\SequenceException::class)]
-#[CoversClass(\Fonil\Sequence\Sequence::class)]
-#[CoversClass(\Fonil\Sequence\Task::class)]
-#[CoversClass(\Fonil\Sequence\Utils\TaskClosure::class)]
-#[CoversClass(\Fonil\Sequence\Utils\TaskFromCallable::class)]
-#[CoversClass(\Fonil\Sequence\Utils\TaskFromSequence::class)]
-#[CoversClass(\Fonil\Sequence\Utils\TaskFromString::class)]
-#[CoversClass(\Fonil\Sequence\Utils\TaskFromTask::class)]
-#[CoversClass(\Fonil\Sequence\Utils\TaskResolver::class)]
+#[CoversClass(\Sequence\Exceptions\SequenceException::class)]
+#[CoversClass(\Sequence\Sequence::class)]
+#[CoversClass(\Sequence\Task::class)]
+#[CoversClass(\Sequence\Utils\TaskClosure::class)]
+#[CoversClass(\Sequence\Utils\TaskFromCallable::class)]
+#[CoversClass(\Sequence\Utils\TaskFromSequence::class)]
+#[CoversClass(\Sequence\Utils\TaskFromString::class)]
+#[CoversClass(\Sequence\Utils\TaskFromTask::class)]
+#[CoversClass(\Sequence\Utils\TaskResolver::class)]
 final class SequenceTest extends TestCase
 {
     protected function setUp(): void

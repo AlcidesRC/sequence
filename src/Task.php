@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Sequence;
+namespace Sequence;
 
 use Closure;
-use Fonil\Sequence\Exceptions\SequenceException;
-use Fonil\Sequence\Utils\TaskResolver;
+use Sequence\Exceptions\SequenceException;
+use Sequence\Utils\TaskResolver;
 
 abstract class Task
 {

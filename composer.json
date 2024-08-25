@@ -1,6 +1,6 @@
 {
-    "name": "fonil/sequence",
-    "description": "A chain of responsability patter implemented with PHP",
+    "name": "alcidesrc/sequence",
+    "description": "A PHP implementation of Chain of Responsability pattern",
     "type": "library",
     "keywords": ["php", "chain-of-responsibility", "sequence", "task", "flow"],
     "license": "MIT",
@@ -12,8 +12,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/fonil/sequence/issues",
-        "source": "https://github.com/fonil/sequence"
+        "issues": "https://github.com/alcidesrc/sequence/issues",
+        "source": "https://github.com/alcidesrc/sequence"
     },
     "require": {
         "php": "^8.3"
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Fonil\\Sequence\\": "src"
+            "Sequence\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Fonil\\Sequence\\Tests\\Unit\\": "tests/Unit",
-            "Fonil\\Sequence\\Tests\\Stub\\": "tests/Stub"
+            "Sequence\\Tests\\Unit\\": "tests/Unit",
+            "Sequence\\Tests\\Stub\\": "tests/Stub"
         }
     },
     "config": {
@@ -45,23 +45,12 @@
         "sort-packages": true
     },
     "scripts": {
-        "clear-coverage": "rm -Rf /coverage/*",
-        "tests": [
-            "@linter",
-            "@phpcs",
-            "phpunit --configuration phpunit.xml --no-coverage --colors --testdox --order-by=random --random-order-seed=$(head -200 /dev/urandom | cksum | cut -f1 -d \" \")"
-        ],
-        "coverage": [
-            "@linter",
-            "@phpcs",
-            "@clear-coverage",
-            "phpunit --configuration phpunit.xml --coverage-text --coverage-html=/coverage --colors --testdox --order-by=random --random-order-seed=$(head -200 /dev/urandom | cksum | cut -f1 -d \" \")"
-        ],
+        "check-syntax": "parallel-lint --colors -e php -j 10 src/ tests/",
+        "check-style": "phpcs -p --colors --standard=phpcs.xml src/ tests/",
+        "fix-style": "phpcbf -p --colors --standard=phpcs.xml src/ tests/",
+        "phpstan": "phpstan analyse --ansi --memory-limit=1G --configuration=phpstan.neon",
         "phpmd": "phpmd src/,tests/ ansi cleancode,codesize,controversial,design,naming,unusedcode",
-        "phpcs": "phpcs -p --colors --standard=phpcs.xml src/ tests/",
-        "phpcbf": "phpcbf -p --colors --standard=phpcs.xml src/ tests/",
-        "linter": "parallel-lint --colors -e php -j 10 src/ tests/",
-        "phpstan": "phpstan analyse --ansi --memory-limit=1G --configuration=phpstan.neon"
+        "tests": "phpunit --configuration phpunit.xml --coverage-text --colors --testdox --order-by=random --random-order-seed=$(head -200 /dev/urandom | cksum | cut -f1 -d \" \")"
     },
     "minimum-stability": "stable",
     "prefer-stable": true
