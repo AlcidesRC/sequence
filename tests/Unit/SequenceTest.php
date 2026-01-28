@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Sequence\Tests\Unit;
 
-use DateTime;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
@@ -16,7 +15,6 @@ use Sequence\Tests\Stub\Foo;
 use Sequence\Tests\Stub\IncrementCounter;
 use Sequence\Tests\Stub\IncrementTask;
 use Sequence\Tests\Stub\InvokableIncrementCounter;
-use SlopeIt\ClockMock\ClockMock;
 use TypeError;
 use stdClass;
 
@@ -31,18 +29,6 @@ use stdClass;
 #[CoversClass(\Sequence\Utils\TaskResolver::class)]
 final class SequenceTest extends TestCase
 {
-    protected function setUp(): void
-    {
-        ClockMock::freeze(new DateTime('2023-01-01 00:00:00'));
-    }
-
-    protected function tearDown(): void
-    {
-        ClockMock::reset();
-    }
-
-    // ---------------------------------------------------------------------------------------------------------------
-
     #[Test]
     #[DataProvider('dataProviderNotSupported')]
     public function checkExceptionIsRaisedWhenTaskIsNotSupported(int $task): void
